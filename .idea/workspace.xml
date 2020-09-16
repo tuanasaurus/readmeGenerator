@@ -46,6 +46,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.8.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.10.2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600219370752</updated>
-      <workItem from="1600219372654" duration="7432000" />
+      <workItem from="1600219372654" duration="22898000" />
     </task>
     <servers />
   </component>
