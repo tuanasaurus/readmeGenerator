@@ -7,16 +7,6 @@ const axios = require('axios');
 
 //Array of question objects with three parameters and key value pairs.
 const questions = [
-    // {
-    //     type: 'input',
-    //     name: 'badge',
-    //     message: {
-    //         "schemaVersion": 1,
-    //         "label": "Student Project",
-    //         "message": "FREE TO USE",
-    //         "color": "orange"
-    //     }
-    // },
     {
         type: 'input',
         name: 'title',
@@ -78,10 +68,10 @@ const questions = [
 
 //Writing the function to fs to append the file
 inquirer.prompt(questions).then(async (response) => {
-    let userAvatar = '';
-    console.log(response);
-    console.log(response.gitUsername);
+    //Added a custom badge from shields.io
+    const badge = `https://img.shields.io/badge/Student-Free%20Use-orange`;
     // Calling the Github API for the user's info
+    let userAvatar = '';
     const queryUrl = `https://api.github.com/users/${response.gitUsername}`;
     try {
         const { data } = await axios.get(queryUrl);
@@ -89,7 +79,7 @@ inquirer.prompt(questions).then(async (response) => {
     } catch (e) {
         console.log(e);
     }
-
+    //Error function for the appendFileSync
     const error = function (err) {
         if (err) {
             console.log(err);
@@ -97,8 +87,8 @@ inquirer.prompt(questions).then(async (response) => {
             console.log("Success!");
         }};
     //fs.appendFileSync string interpolation to have cleaner line of codes
-    // fs.appendFileSync('ReadMe.md', `# ${response.badge}\n`, error);
-    fs.appendFileSync('ReadMe.md', `# ${response.tile}\n`, error);
+    fs.appendFileSync('ReadMe.md', `# ${response.title}\n`, error);
+    fs.appendFileSync('ReadMe.md', `# ![Student Free Use](${badge})\n`, error);
     fs.appendFileSync('ReadMe.md', `# The Name of the repo:\n${response.repoName}\n`, error);
     fs.appendFileSync('ReadMe.md', `## Author:\n${response.gitUsername}\n`, error);
     fs.appendFileSync('ReadMe.md', `## Overview of the project\n${response.description}\n`, error);
@@ -118,5 +108,3 @@ inquirer.prompt(questions).then(async (response) => {
     fs.appendFileSync('ReadMe.md', `## Test\n${response.test}\n`, error);
     fs.appendFileSync('ReadMe.md', `## Reach out\n${response.questions}\n![Me](${userAvatar})`, error);
 });
-
-// init();
