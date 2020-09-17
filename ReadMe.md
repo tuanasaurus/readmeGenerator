@@ -5,7 +5,10 @@ simpleReadmeGeneratorTP
 ## Author:
 Tuanasaurus
 ## Overview of the project
-Using promted questions a user can generate a readme.md file
+Using questions a user can generate a readme.md file
+
+[Watch Video of the Readme in action](https://www.youtube.com/watch?v=IW7wqQyz51k)
+
 ## Table of Contents
 -[Installation](#Installation)
         
